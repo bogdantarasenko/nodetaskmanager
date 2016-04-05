@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+	<head>
+		<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	</head>
+	<body>
+		<form id="taskfrom" onsubmit="return false;">
+			<input type="text" name="task" id="task">
+			<button name="send" id="send">send</button>
+		</form>
+		<ul>
+		<p>{{user}}</p>
+		{{#each data}}
+			<li>
+			
+			<div class="task">
+				<div name="postid">{{id}}</div>
+				
+				<textarea name="updatetask" rows="1">{{task}}</textarea>
+				<button name="update">update</button>&nbsp;
+				{{done}}
+			</div>
+			<a href="/delete/{{id}}">delete</a>
+			</li>
+		{{/each}}
+		</ul>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.js"></script>
+		
+		<script src="/js/main.js"></script>
+	</body>
+</html>
